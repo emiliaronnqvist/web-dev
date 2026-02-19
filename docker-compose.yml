@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: jkpg_city_db
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: jkpg_city
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # Backend service for later when Dockerized
+  # backend:
+  #   build: ./server
+  #   ports:
+  #     - "3000:3000"
+  #   environment:
+  #     DATABASE_URL: postgres://user:password@db:5432/jkpg_city
+  #   depends_on:
+  #     - db
+
+volumes:
+  postgres_data:
