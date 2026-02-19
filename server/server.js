@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const PORT = 3005;
+const stores = require("../client/assets/stores.json");
 
 // Serve static files from the client directory
 app.use(express.static(path.join(__dirname, "../client")));
@@ -17,6 +18,13 @@ app.get("/stores", (req, res) => {
 app.get("/stores/:id", (req, res) => {
   const id = req.params.id;
   const store = stores.find((store) => store.id === id);
+  res.json(store);
+});
+
+//Test with slugs
+app.get("/stores/:slug", (req, res) => {
+  const slug = req.params.slug;
+  const store = stores.find((store) => store.slug === slug);
   res.json(store);
 });
 
