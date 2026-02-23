@@ -1,11 +1,11 @@
 // Wait until the page is loaded
 document.addEventListener("DOMContentLoaded", () => {
   fetch("/stores")
-    .then(res => res.json())
-    .then(data => {
+    .then((res) => res.json())
+    .then((data) => {
       const list = document.getElementById("stores");
 
-      data.forEach(store => {
+      data.forEach((store) => {
         const li = document.createElement("li");
 
         li.innerHTML = `
@@ -18,5 +18,5 @@ document.addEventListener("DOMContentLoaded", () => {
         list.appendChild(li);
       });
     })
-    .catch(err => console.error("Error loading stores:", err));
+    .catch((err) => console.error("Error loading stores:", err));
 });
