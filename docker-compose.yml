@@ -9,9 +9,20 @@ services:
       POSTGRES_PASSWORD: mypassword
       POSTGRES_DB: mydb
     ports:
-      - "5432:5432" # Exposes the DB to your local machine
+      - "5432:5432" # Exposes the DB to your local
     volumes:
       - pgdata:/var/lib/postgresql/data # Saves DB data so it isn't lost on restart
+
+  # --- The Backend Service ---
+  backend:
+    build: . # Tells Docker to use the Dockerfile in this folder
+    ports:
+      - "3005:3005" # Maps port 3005 in Docker to 3005 on your laptop
+    environment:
+      # Pass the database connection URL to your Express app
+      - DATABASE_URL=postgres://myuser:mypassword@db:5432/mydb
+    depends_on:
+      - db # Ensures the database starts BEFORE the backend
 
 volumes:
   pgdata: # Registers the volume for database storage

@@ -1,74 +1,0 @@
-Web Development - Advanced Concepts 
-TFWN19/TFWN14 
-Project assignment
-Background
-•Jönköping has a thriving city core with shops, restaurants 
-and bars. 
-•JkpgCity is a government owned organization with the 
-mission to develop and promote the city commerce. 
-• The web page of JkpgCity contains little to no information 
-about what’s going on in the city.
-Web Development - Advanced Concepts 
-TFWN19/TFWN14 - 15 January 2024
-We must be able to 
-do this better, 
-right?
-Web Development - Advanced Concepts 
-TFWN19/TFWN14 - 15 January 2024
-Project overview
-•Backend
-•REST API
-•Database
-•Docker deployment
-•Frontend with venues and 
-information
-•Interactive design
-Web Development - Advanced Concepts 
-TFWN19/TFWN14 - 15 January 2024
-Grades
-•Grade 3
-oBasic setup of all parts of the project frontend and backend (and 
-database) with node.js. 
-oDefine API-call using REST connecting Frontend and backend. 
-oLoad the list of venues from the database using a REST API call 
-and show them as overview webpage 
-•Grade 4
-oExtend the webpage ability to sort, add, remove or edit the list of 
-venues by using respective forms in the frontend.
-oRun the database in a Docker container 
-•Grade 5
-              
-   
-          
-         
-oRequirements: Only Node.js and CSS and Docker is allowed. The 
-focus is on gaining deeper knowledge about to use Javascript to 
-interactively manipulate the Websites. 
-Web Development - Advanced Concepts 
-TFWN19/TFWN14 - 15 January 2024
-o Extend the dataset with more data about the stores and venues. 
-o The backend should also be put into a Docker container
-o             
-    
-������������������������������������������������������������
-��������������������
-Deadline
-•Project timeframe
-      
-•Deadline for presenting the project
-   
-      
-       
-   
-Web Development - Advanced Concepts 
-TFWN19/TFWN14 - 15 January 2024
-o      
-  
-        
-o All group members have to be there
- to present the project.
-       
-o  Week 12 (the week before exam week)
-    
-     Week 8 — 12
-    ���������������������������������
