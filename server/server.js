@@ -5,6 +5,8 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const PORT = 3005;
+
+//Still cant load a specific store
 const stores = require("../client/assets/stores.json");
 
 // Serve static files from the client directory
@@ -18,9 +20,9 @@ app.get("/stores", (req, res) => {
 });
 
 //To show specific store pages Borde vi ändra och lägga in slug utan svenska tecken så urln blir /ahlens istället för /åhlens?
-app.get("/stores/:id", (req, res) => {
-  const id = req.params.id;
-  const store = stores.find((store) => store.id === id);
+app.get("/stores/:slug", (req, res) => {
+  const slug = req.params.slug;
+  const store = stores.find((store) => store.slug === slug);
   res.json(store);
 });
 
