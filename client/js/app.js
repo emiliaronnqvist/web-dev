@@ -11,7 +11,6 @@ if (list) {
 
         li.innerHTML = `
             <h2>${store.name}</h2>
-            <p>${store.description}</p>
             <a href="/store/${store.slug}">Visit</a>
             <hr>
           `;
