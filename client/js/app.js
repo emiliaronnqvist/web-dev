@@ -1,4 +1,4 @@
-// Wait until the page is loaded
+// Wait until the HTML page is loaded
 // document.addEventListener("DOMContentLoaded", () => {
 //Fetches all stores from the server for index.html
 const list = document.getElementById("stores");
