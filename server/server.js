@@ -1,4 +1,4 @@
-// Import the Express framework (used to create a web server and API routes), 
+// Import the Express framework (used to create a web server and API routes),
 // path imports node,js which handle files,
 //app creates express app
 const express = require("express");
@@ -28,8 +28,8 @@ app.get("/stores/:slug", (req, res) => {
 
 //Test with slugs
 app.get("/stores/:slug", (req, res) => {
-  const slug = req.params.slug;
-  const store = stores.find((store) => store.slug === slug);
+  const slug = req.params.slug.toLowerCase();
+  const store = stores.find((store) => store.slug.toLowerCase() === slug);
   res.json(store);
 });
 
