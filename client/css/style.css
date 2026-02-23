@@ -5,3 +5,6 @@
   --color-secondary: rgb(0, 0, 0);
 }
 
+body {
+  font-family: "acumin-pro", sans-serif;
+}
