@@ -20,12 +20,6 @@ app.get("/stores", (req, res) => {
 });
 
 //To show specific store pages Borde vi ändra och lägga in slug utan svenska tecken så urln blir /ahlens istället för /åhlens?
-app.get("/stores/:slug", (req, res) => {
-  const slug = req.params.slug;
-  const store = stores.find((store) => store.slug === slug);
-  res.json(store);
-});
-
 //Test with slugs
 app.get("/stores/:slug", (req, res) => {
   const slug = req.params.slug.toLowerCase();
