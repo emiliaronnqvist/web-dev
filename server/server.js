@@ -19,6 +19,11 @@ app.get("/stores", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/assets/stores.json"));
 });
 
+// Serve the store.html for /store/:slug URLs
+app.get("/store/:slug", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/store.html"));
+});
+
 //To show specific store pages Borde vi ändra och lägga in slug utan svenska tecken så urln blir /ahlens istället för /åhlens?
 //Test with slugs
 app.get("/stores/:slug", (req, res) => {

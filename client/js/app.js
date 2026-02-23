@@ -1,38 +1,44 @@
 // Wait until the page is loaded
-document.addEventListener("DOMContentLoaded", () => {
-  //Fetches all stores from the server for index.html
+// document.addEventListener("DOMContentLoaded", () => {
+//Fetches all stores from the server for index.html
+const list = document.getElementById("stores");
+if (list) {
   fetch("/stores")
     .then((res) => res.json())
     .then((data) => {
-      const list = document.getElementById("stores");
-
       data.forEach((store) => {
         const li = document.createElement("li");
 
         li.innerHTML = `
-          <h2>${store.name}</h2>
-          <p>${store.description}</p>
-          <a href="/store/${store.slug}" target="_blank">Visit</a>
-          <hr>
-        `;
+            <h2>${store.name}</h2>
+            <p>${store.description}</p>
+            <a href="/store/${store.slug}">Visit</a>
+            <hr>
+          `;
 
         list.appendChild(li);
       });
     })
-    .catch((err) => console.error("Error loading stores:", err));
+    .catch((err) => console.error("Error", err));
+}
 
-  //Fetches a specific store from the server for store.html template
+//Fetches a specific store from the server for store.html template
+const div = document.getElementById("store_info");
+if (div) {
+  // Extract slug from the URL path
+  const pathParts = window.location.pathname.split("/");
+  const slug = pathParts[pathParts.length - 1];
+
   fetch(`/stores/${slug}`)
     .then((res) => res.json())
-    .then((data) => {
-      const div = document.getElementById("store_info");
-
+    .then((store) => {
       div.innerHTML = `
-        <h2>${store.name}</h2>
-        <p>${store.description}</p>
-        <a href="${store.url}" target="_blank">Visit ${store.name}</a>
-        <hr>
-      `;
+          <h2>${store.name}</h2>
+          <p>${store.description}</p>
+          <a href="${store.url}" target="_blank">Visit ${store.name}</a>
+          <hr>
+        `;
     })
     .catch((err) => console.error("Error loading store:", err));
-});
+}
+// });
