@@ -24,6 +24,14 @@ app.get("/store/:slug", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/store.html"));
 });
 
+//Random store (in header)
+app.get("/random", (req, res) => {
+  const storeID = Math.floor(Math.random() * stores.length);
+  const store = stores[storeID];
+  // https://www.geeksforgeeks.org/web-tech/express-js-res-redirect-function/ Express reirect info
+  res.redirect(`/store/${store.slug}`);
+});
+
 //To show specific store pages Borde vi ändra och lägga in slug utan svenska tecken så urln blir /ahlens istället för /åhlens?
 //Test with slugs
 app.get("/stores/:slug", (req, res) => {

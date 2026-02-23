@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  # --- The Database Service ---
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: mydb
+    ports:
+      - "5432:5432" # Exposes the DB to your local machine
+    volumes:
+      - pgdata:/var/lib/postgresql/data # Saves DB data so it isn't lost on restart
+
+volumes:
+  pgdata: # Registers the volume for database storage
