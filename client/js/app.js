@@ -22,7 +22,7 @@ if (list) {
     .catch((err) => console.error("Error", err));
 }
 
-//Fetches a specific store from the server for store.html template
+//Fetches a specific store from the server for store.html templat
 const div = document.getElementById("store_info");
 if (div) {
   // Extract slug from the URL path
@@ -35,8 +35,7 @@ if (div) {
       div.innerHTML = `
           <h2>${store.name}</h2>
           <p>${store.description}</p>
-          <a href="${store.url}" target="_blank">Visit ${store.name}</a>
-          <hr>
+          <a href="http://${store.url}" target="_blank">Visit ${store.name}</a>
         `;
     })
     .catch((err) => console.error("Error loading store:", err));
