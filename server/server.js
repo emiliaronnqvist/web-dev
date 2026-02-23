@@ -1,3 +1,6 @@
+// Import the Express framework (used to create a web server and API routes), 
+// path imports node,js which handle files,
+//app creates express app
 const express = require("express");
 const path = require("path");
 const app = express();
